@@ -1,6 +1,6 @@
 @extends('main')
 @section('title')
-    CMS Web App
+    Create - SIMS Web App
 @endsection
 @section('content')
     <section class="create mt-4 px-4">

@@ -1,6 +1,6 @@
 @extends('main')
 @section('title')
-    CMS Web App
+    Profil - SIMS Web App
 @endsection
 @section('content')
     <section class="mt-4 px-4">

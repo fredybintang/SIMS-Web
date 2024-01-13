@@ -1,6 +1,6 @@
 @extends('main')
 @section('title')
-    CMS Web App
+    Produk -SIMS Web App
 @endsection
 @section('content')
     <section class="product d-flex mt-4 px-4">
