@@ -1,0 +1,91 @@
+/* Font Family Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --font-primary: Inter;
+    --color-primary: #F42619;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+}
+
+/* Section Login */
+.login-content {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img.login-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* End of Section Login */
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--color-primary);
+    width: 280px;
+    min-height: 100vh;
+}
+
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    font-weight: 700;
+    transform: scale(1.1);
+}
+/* End of Sidebar */
+
+/* Section Product */
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #dee2e6;
+}
+
+/* End of Section Product */
+
+
+/* Section Create Product */
+.create .upload-image {
+    position: relative;
+}
+
+.create .upload-image label.image-label {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 200px;
+    border: 3px dashed;
+    border-radius: 5px;
+}
+
+.create .upload-image label.image-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.create .form-image {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    height: 200px;
+}
+/* End of Section Create Product */
+
+/* Pagination */
+
+.pagination.table>:not(caption)>*>*
+{
+    padding: 0%;
+}
