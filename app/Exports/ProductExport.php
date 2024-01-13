@@ -3,17 +3,49 @@
 namespace App\Exports;
 
 use App\Models\Product;
-use Maatwebsite\Excel\Concerns\FromView;
-use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ProductExport implements FromView
+class ProductExport implements FromCollection, WithHeadings
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function view(): View
+    protected $products;
+    protected $index = 0;
+
+    public function __construct($products)
     {
-        $products = Product::all();
-        return view('exports.table', ['products' => $products]);
+        $this->products = $products;
     }
+
+    public function collection()
+    {
+        $search = request('search');
+        $kategori = request('kategori');
+
+        $query = Product::select('id', 'nama_produk', 'kategori', 'harga_beli', 'harga_jual', 'stok_barang');
+
+        if ($search) {
+            $query->where('nama_produk', 'like', '%' . $search . '%');
+        }
+
+        if ($kategori) {
+            $query->where('kategori', $kategori);
+        }
+
+        $products = $query->get();
+
+        return $products;
+    }
+
+    public function headings(): array
+    {
+        return [
+            'No',
+            'Nama Produk',
+            'Kategori Produk',
+            'Harga Beli (Rp)',
+            'Harga Jual (Rp)',
+            'Stok Produk',
+        ];
+    }
+
 }

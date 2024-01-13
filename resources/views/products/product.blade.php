@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-7">
                 <div class="d-flex justify-content-end mb-3 gap-3">
-                    <a class="btn btn-success d-flex align-items-center" href="{{ route('export-excel') }}">
+                    <a class="btn btn-success d-flex align-items-center" href="{{ route('export-excel', request()->all()) }}">
                         <img src="{{ asset('assets/MicrosoftExcelLogo.png') }}" alt="Export">
                         <span class="ms-1">Export Excel</span>
                     </a>
