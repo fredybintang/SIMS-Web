@@ -24,6 +24,11 @@
                             @csrf
                             <div class="form-group mb-4">
                                 <div class="row">
+                                    <div class="alert alert-danger" role="alert">
+                                        Login menggunakan akun:
+                                        <div>Email: admin@gmail.com</div>
+                                        <div>Password: admin123</div>
+                                      </div>
                                     @if (session('failed'))
                                         <div class="alert alert-danger mt-3">
                                             {{ session('failed') }}
