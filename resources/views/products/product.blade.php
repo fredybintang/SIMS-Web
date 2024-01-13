@@ -1,18 +1,3 @@
-@if (session('loginResponse'))
-    @php
-        $loginResponse = session('loginResponse');
-    @endphp
-
-    <script>
-        var loginResponse = @json($loginResponse);
-        localStorage.setItem('loginResponse', JSON.stringify(loginResponse));
-
-        // Lakukan sesuatu dengan variabel loginResponse, misalnya menampilkan atau memprosesnya
-        console.log('Login response:', loginResponse);
-    </script>
-@endif
-
-
 @extends('main')
 @section('title')
     CMS Web App
